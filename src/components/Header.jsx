@@ -9,7 +9,7 @@ import profile from "../assets/profile.svg"
 const Header = () => {
   return (
     <nav className="bg-white text-black px-4 flex flex-wrap" style={{ width: '100%' }}>
-      <div className="container mx-auto flex justify-between items-center" style={{ width: '50%' }}>
+      <div className="container mx-auto flex justify-between items-center" style={{ width: '55%' }}>
         <NavLink
           to="/"
           className={({ isActive }) =>
@@ -25,8 +25,8 @@ const Header = () => {
               : 'px-4 py-2'
           } to="/register-patient">Patient Register</NavLink>
         <Dropdown title="Patient Data" items={[{opt:"Data 1", to:'/patient-data'}, {opt:"Data 2", to:"/patient-data"}]} />
-        <Dropdown title="Operation Theater" items={["Op 1", "Op 2"]} />
-        <Dropdown title="Reports" items={["Op 1", "Op 2"]} />
+        <Dropdown title="Operation Theater" items={[{opt:"OT 1", to:'/patient-data'}, {opt:"OT 2", to:"/patient-data"}]} />
+        <Dropdown title="Reports" items={[{opt:"Report 1", to:'/patient-data'}, {opt:"Report 2", to:"/patient-data"}]} />
       </div>
       <div className="flex flex-wrap justify-between items-center" style={{ width: '15%' }}>
         <div className="cursor-pointer"><img src={question} alt="question" /></div>

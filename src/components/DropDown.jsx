@@ -21,7 +21,7 @@ const Dropdown = ({ title, items }) => {
   }, []);
 
   return (
-    <div ref={dropdownRef} className="relative inline-block text-left">
+    <div ref={dropdownRef} className="relative inline-block text-left px-4 py-2">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="text-black flex items-center"
