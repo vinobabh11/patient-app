@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Dropdown from "./DropDown";
 import question from '../assets/question.svg'
 import notification from "../assets/notification.svg"
@@ -7,11 +7,15 @@ import logout from "../assets/logout.svg"
 import profile from "../assets/profile.svg"
 
 const Header = () => {
+  const history = useNavigate();
+
+  console.log()
+
   return (
     <nav className="bg-white text-black px-4 flex flex-wrap" style={{ width: '100%' }}>
       <div className="container mx-auto flex justify-between items-center" style={{ width: '55%' }}>
         <NavLink
-          to="/"
+          to="/dashboard"
           className={({ isActive }) =>
             isActive
               ? 'text-black py-5 border-b-2 border-secondary'
@@ -32,7 +36,7 @@ const Header = () => {
         <div className="cursor-pointer"><img src={question} alt="question" /></div>
         <div className="cursor-pointer"><img src={notification} alt="notification" /></div>
         <div className="cursor-pointer"><img src={profile} alt="profile" /></div>
-        <div className="cursor-pointer"><img src={logout} alt="logout" /></div>
+        <div className="cursor-pointer" onClick={()=> history('/')}><img src={logout} alt="logout" /></div>
       </div>
     </nav>
   );
